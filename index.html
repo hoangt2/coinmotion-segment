@@ -72,10 +72,12 @@
         e.preventDefault();
         var form = e.target;
         var email = form["email"].value;
-        var private = document.querySelector('input[name = "account_type"]:checked').value;
+        var account_type = document.querySelector('input[name = "account_type"]:checked').value;
+        var referral = $('#referral').is(':checked');
         var user = {
             email: email, 
-            private: private,
+            account_type: account_type,
+            referral: referral
         };
         analytics.identify('1234', {
             email: email,
