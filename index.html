@@ -65,14 +65,24 @@
 
     <!--Segment identify and track script -->
     
-  <script type="text/javascript">
-          
+  
+
+    <script type="text/javascript">
+      function identify(e){
+        e.preventDefault();
+        var form = e.target;
+        var email = form["email"].value;
+        var user = {
+            email: email, 
+        };
         analytics.identify('1234', {
-            email: 'test@coinmotion.com', 
+            email: email
         });
-          
-        analytics.track('Registration Submitted');
-    </script>
+        analytics.track('Registration submitted', user, function() {
+            window.location.href = "";
+        });
+      }
+</script>
     
 </body> 
 </html>
