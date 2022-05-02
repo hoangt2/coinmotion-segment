@@ -47,7 +47,7 @@
     
     <div>
       <input type="checkbox" id="referral" name="referral">
-      <label for="reffeal">I have a referral code.</label>
+      <label for="referral">I have a referral code.</label>
     </div>
     
     <div>
@@ -72,11 +72,16 @@
         e.preventDefault();
         var form = e.target;
         var email = form["email"].value;
+        var private = form['private'].value;
+        var referral = form['referral'].value;
         var user = {
             email: email, 
+            private: private,
+            referral: referral
         };
         analytics.identify('1234', {
             email: email
+            private: private
         });
         analytics.track('Registration submitted', user, function() {
             window.location.href = "";
