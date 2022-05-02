@@ -72,15 +72,13 @@
         e.preventDefault();
         var form = e.target;
         var email = form["email"].value;
-        var private = form['private'].value;
-        var referral = form['referral'].value;
+        var private = document.querySelector('input[name="private"]:checked').value;
         var user = {
             email: email, 
             private: private,
-            referral: referral
         };
         analytics.identify('1234', {
-            email: email
+            email: email,
             private: private
         });
         analytics.track('Registration submitted', user, function() {
