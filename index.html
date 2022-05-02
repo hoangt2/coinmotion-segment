@@ -63,7 +63,36 @@
     <input name="submit" type="submit" value="submit"/>
 </form> 
 
-    <!--Placeholder for identify and track script -->
-
+    <!--Segment identify and track script -->
+    
+  <script type="text/javascript">
+      function identify(e){
+        e.preventDefault();
+        var form = e.target;
+        var email = form["email"].value;
+        var private = form['private'].value;
+        var company = form['company'].value;
+        var referral = form['referral'].value;
+        var authorize_data = form['authorize_data'].value;
+        var user = {
+            email: email, 
+            private: private, 
+            company: company,
+            referral: referral,
+        };
+          
+        analytics.identify('1234' // when implementing this code, change this userId with the variable
+                           , {
+            email: email, 
+            private: private,
+            company: company
+        });
+          
+        analytics.track('Registration Submitted', user, function() {
+            window.location.href = "";
+        });
+      }
+    </script>
+    
 </body> 
 </html>
