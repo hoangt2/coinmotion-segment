@@ -17,7 +17,7 @@
 <h1>Let's get started!</h1> 
 <p>Create a free account</p> 
 <p>We will guide you through creating and verifying your account. You can also deposit funds to your Coinmotion wallet and connect your bank account for future withdrawals.</p>
-<form name="register" onsubmit="register(event)">
+<form name="register" onsubmit="identify(event)">
     <fieldset>
     <legend>Account type:</legend>
 
@@ -81,6 +81,7 @@
         analytics.track('Registration submitted', user, function() {
             window.location.href = "";
         });
+        alert("You have registered!");
       }
 </script>
     
