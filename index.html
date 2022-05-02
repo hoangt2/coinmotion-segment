@@ -12,18 +12,48 @@
 <p>Create a free account</p> 
 <p>We will guide you through creating and verifying your account. You can also deposit funds to your Coinmotion wallet and connect your bank account for future withdrawals.</p>
 <form name="register" onsubmit="register(event)">
-     What is your favorite travel destination?
-    <input name="destination" required="" size="81" type="text"/> 
-    <br><br><br> 
-    Any recommendations (cool things to do, places to visit or restaurants to eat)? 
-    <br><br> 
-    <textarea cols="81" name="details" required="" rows="10">
-    </textarea> 
-    <br><br> 
-    Name: <input name="fullname" required="" size="75" type="text"/> 
-    <br><br> 
-    Email: <input name="email" required="" size="75" type="email"/> 
-    <br><br>
+    <fieldset>
+    <legend>Account type:</legend>
+
+    <div>
+      <input type="radio" id="private" name="account_type" value="private"
+             checked>
+      <label for="private">Private</label>
+    </div>
+
+    <div>
+      <input type="radio" id="company" name="account_type" value="company">
+      <label for="company">Company</label>
+    </div>
+    </fieldset> 
+    
+    <fieldset>
+    <legend>Account details:</legend>
+    
+    <div>
+        Email: <input name="email" required="" size="75" type="email"/> 
+    </div>
+    <br>
+    <div>
+        Password: <input name="password" required="" size="75" type="password"/> 
+    </div>
+    </fieldset> 
+    
+    <div>
+      <input type="checkbox" id="referral" name="referral">
+      <label for="reffeal">I have a referral code.</label>
+    </div>
+    
+    <div>
+      <input type="checkbox" id="terms_conditions" name="terms_conditions">
+      <label for="terms_conditions">I authorise to provide my information to create an account. I have read and accepted terms and conditions and privacy policy.</label>
+    </div>
+    
+    <div>
+      <input type="checkbox" id="authorize_data" name="authorize_data">
+      <label for="reffeal">I authorise the processing of my data to receive product news and relevant news.</label>
+    </div>
+    
     <input name="submit" type="submit" value="submit"/>
 </form> 
 
