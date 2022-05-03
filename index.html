@@ -74,8 +74,8 @@
         var email = form["email"].value;
         var account_type = document.querySelector('input[name = "account_type"]:checked').value;
         var referral = document.getElementById("referral").checked;  
-        var terms_conditions = document.getElementById("terms_conditions").value;
-        var authorize_data = document.getElementById("authorize_data").value;
+        var terms_conditions = document.getElementById("terms_conditions").checked;
+        var authorize_data = document.getElementById("authorize_data").checked;
         var user = {
             email: email, 
             account_type: account_type,
@@ -83,7 +83,7 @@
             terms_conditions: terms_conditions,
             authorize_data: authorize_data
         };
-        analytics.identify('1234', {
+        analytics.identify('thisIsTungId', {
             email: email,
             account_type: account_type
         });
