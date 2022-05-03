@@ -57,7 +57,7 @@
     
     <div>
       <input type="checkbox" id="authorize_data" name="authorize_data" value = 'authorize_data'>
-      <label for="reffeal">I authorise the processing of my data to receive product news and relevant news.</label>
+      <label for="authorize_data">I authorise the processing of my data to receive product news and relevant news.</label>
     </div>
     
     <input name="submit" type="submit" value="submit"/>
@@ -74,14 +74,18 @@
         var email = form["email"].value;
         var account_type = document.querySelector('input[name = "account_type"]:checked').value;
         var referral = document.getElementById("referral").value;  
+        var terms_conditions = document.getElementById("terms_conditions").value;
+        var authorize_data = document.getElementById("authorize_data").value;
         var user = {
             email: email, 
             account_type: account_type,
-            referral: referral
+            referral: referral,
+            terms_conditions: terms_conditions,
+            authorize_data: authorize_data
         };
         analytics.identify('1234', {
             email: email,
-            private: private
+            account_type: account_type
         });
         analytics.track('Registration submitted', user, function() {
             window.location.href = "";
