@@ -73,7 +73,7 @@
         var form = e.target;
         var email = form["email"].value;
         var account_type = document.querySelector('input[name = "account_type"]:checked').value;
-        var referral = document.getElementById("referral").value;  
+        var referral = document.getElementById("referral").checked;  
         var terms_conditions = document.getElementById("terms_conditions").value;
         var authorize_data = document.getElementById("authorize_data").value;
         var user = {
